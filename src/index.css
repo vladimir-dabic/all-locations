@@ -1,5 +1,7 @@
 :root {
   --card-margin: calc(25px / 2);
+  --text-color: rgb(0, 17, 34, 0.8);
+  --border-color: rgb(0, 17, 34, 0.1);
 }
 
 @font-face {
