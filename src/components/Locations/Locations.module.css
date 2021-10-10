@@ -1,0 +1,5 @@
+.container {
+  padding: calc(25px - var(--card-margin)) calc(60px - var(--card-margin));
+  display: flex;
+  flex-wrap: wrap;
+}

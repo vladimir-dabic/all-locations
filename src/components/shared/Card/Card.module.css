@@ -1,0 +1,22 @@
+.container {
+  margin: var(--card-margin);
+  box-sizing: border-box;
+  padding: 15px 25px;
+  width: 340px;
+  height: 139px;
+  border: 1px solid rgb(0, 17, 34, 0.1);
+  border-radius: 2px;
+  background-color: rgb(246, 246, 246, 0.2);
+}
+
+.container:hover {
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+
+.title {
+  color: rgb(0, 17, 34, 0.8);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 32px;
+}
