@@ -1,5 +1,4 @@
-import React, { FC, KeyboardEvent, MouseEvent, useState } from 'react';
-
+import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from 'react';
 import { Card } from '../../shared/Card';
 import { TextBox } from '../../shared/TextBox';
 import { formatDate } from '../../../utility/helpers';
@@ -17,24 +16,31 @@ type Props = {
 };
 
 const LocationCard: FC<Props> = ({ name, userCount, dateCreated }) => {
+  const elementRef = useRef<HTMLDivElement>(null);
   const [views, setViews] = useState(0);
 
   const handleClick = (e: MouseEvent): void => {
     e.preventDefault();
     setViews(views + 1);
   };
-  const handleKeyPress = (e: KeyboardEvent): void => {
-    e.preventDefault();
-    if (e.code === 'Space') {
+
+  const handleKeyDown = (e: KeyboardEvent): void => {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      e.preventDefault();
       setViews(views + 1);
     }
+    if (e.code === 'Escape') {
+      elementRef.current?.blur();
+    }
   };
+
   return (
     <div
       onClick={handleClick}
-      onKeyPress={handleKeyPress}
+      onKeyDown={handleKeyDown}
       role="button"
       tabIndex={0}
+      ref={elementRef}
     >
       <Card title={name}>
         <TextBox text={`${userCount} Views`} icon={CardIcons.users} />
