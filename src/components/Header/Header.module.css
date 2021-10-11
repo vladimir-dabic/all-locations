@@ -13,7 +13,7 @@
   font-size: 22px;
   line-height: var(--line-height);
   font-weight: var(--bold);
-  color: var(--text-color);
+  color: var(--main-color);
   opacity: 80%;
 }
 
@@ -22,6 +22,6 @@
   font-size: 16px;
   line-height: var(--line-height);
   font-weight: var(--bold);
-  color: var(--text-color);
+  color: var(--main-color);
   opacity: 30%;
 }
