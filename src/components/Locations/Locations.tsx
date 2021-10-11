@@ -1,7 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
+
 import { getLocations, LocationData } from '../../api';
-import { Card } from '../shared/Card';
+
 import style from './Locations.module.css';
+import { LocationCard } from './LocationCard';
 
 const Locations: FC = () => {
   const [locations, setLocations] = useState<LocationData[]>([]);
@@ -9,23 +11,25 @@ const Locations: FC = () => {
     try {
       const result = await getLocations();
       setLocations(result);
-      console.log({ result });
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error(err);
     }
   };
 
   useEffect(() => {
     fetchData();
-    console.log('hoj');
   }, []);
 
   return (
     <div className={style.container}>
       {locations.map((l) => (
-        <Card title={l.name}>
-          <div>hoj</div>
-        </Card>
+        <LocationCard
+          key={l.id}
+          name={l.name}
+          userCount={l.userCount}
+          dateCreated={l.createdAt}
+        />
       ))}
     </div>
   );

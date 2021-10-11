@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-left: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.svgImg {
+  opacity: 50%;
+  width: 14px;
+}

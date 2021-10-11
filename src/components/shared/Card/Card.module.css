@@ -4,7 +4,7 @@
   padding: 15px 25px;
   width: 340px;
   height: 139px;
-  border: 1px solid rgb(0, 17, 34, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: 2px;
   background-color: rgb(246, 246, 246, 0.2);
 }
@@ -15,7 +15,7 @@
 }
 
 .title {
-  color: rgb(0, 17, 34, 0.8);
+  color: var(--text-color);
   font-size: 18px;
   font-weight: 600;
   line-height: 32px;
