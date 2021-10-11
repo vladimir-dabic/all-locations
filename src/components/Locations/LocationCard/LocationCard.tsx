@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  KeyboardEvent,
-  KeyboardEventHandler,
-  MouseEvent,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FC, KeyboardEvent, MouseEvent, useState } from 'react';
 
 import { Card } from '../../shared/Card';
 import { TextBox } from '../../shared/TextBox';
