@@ -1,6 +1,11 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { FC, MouseEventHandler, useState } from 'react';
+import React, {
+  FC,
+  KeyboardEvent,
+  KeyboardEventHandler,
+  MouseEvent,
+  useEffect,
+  useState,
+} from 'react';
 
 import { Card } from '../../shared/Card';
 import { TextBox } from '../../shared/TextBox';
@@ -20,11 +25,24 @@ type Props = {
 
 const LocationCard: FC<Props> = ({ name, userCount, dateCreated }) => {
   const [views, setViews] = useState(0);
-  const handleClick = (): void => {
+
+  const handleClick = (e: MouseEvent): void => {
+    e.preventDefault();
     setViews(views + 1);
   };
+  const handleKeyPress = (e: KeyboardEvent): void => {
+    e.preventDefault();
+    if (e.code === 'Space') {
+      setViews(views + 1);
+    }
+  };
   return (
-    <div onClick={handleClick}>
+    <div
+      onClick={handleClick}
+      onKeyPress={handleKeyPress}
+      role="button"
+      tabIndex={0}
+    >
       <Card title={name}>
         <TextBox text={`${userCount} Views`} icon={CardIcons.users} />
         <TextBox text={formatDate(dateCreated)} icon={CardIcons.timezone} />
