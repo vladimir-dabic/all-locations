@@ -13,6 +13,7 @@
   --line-height-m: 24px;
   --line-height-l: 28px;
   --line-height-xl: 32px;
+  --svg-opacity: 40%;
 }
 
 @font-face {

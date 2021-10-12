@@ -20,7 +20,7 @@
 }
 
 .editSvg {
-  opacity: 50%;
+  opacity: var(--svg-opacity);
   width: 14px;
   height: 14px;
 }

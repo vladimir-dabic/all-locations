@@ -63,7 +63,7 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
           <div className={style.body}>{children}</div>
           <div className={style.footer}>
             <button onClick={onClose} type="button" className={style.button}>
-              Close
+              Done
             </button>
           </div>
         </div>

@@ -21,6 +21,7 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
   font-weight: var(--bold);
+  color: var(--text-color);
 }
 
 .content {
