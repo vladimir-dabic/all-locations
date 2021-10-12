@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 26px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.editSvg {
+  opacity: 50%;
+  width: 14px;
+  height: 14px;
+}

@@ -2,6 +2,8 @@ import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from 'react';
 import { Card } from '../../shared/Card';
 import { LocationData } from '../../../api';
 import { CardDetails } from '../shared/CardDetails';
+import EditSvg from '../../../assets/Edit.svg';
+import style from './LocationCard.module.css';
 
 export enum CardIcons {
   users = 'users',
@@ -18,6 +20,7 @@ const LocationCard: FC<Props> = ({ data, handleModal }) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [views, setViews] = useState(0);
   const { name, createdAt, userCount } = data;
+  const [showEdit, setShowEdit] = useState(false);
 
   const handleClick = (e: MouseEvent): void => {
     e.preventDefault();
@@ -40,10 +43,18 @@ const LocationCard: FC<Props> = ({ data, handleModal }) => {
     <div
       onClick={handleClick}
       onKeyDown={handleKeyDown}
+      onMouseEnter={() => setShowEdit(true)}
+      onMouseLeave={() => setShowEdit(false)}
       role="button"
       tabIndex={0}
       ref={elementRef}
+      className={style.container}
     >
+      {showEdit && (
+        <div className={style.edit}>
+          <img src={EditSvg} alt="edit" className={style.editSvg} />
+        </div>
+      )}
       <Card title={name}>
         <CardDetails
           userCount={userCount}
