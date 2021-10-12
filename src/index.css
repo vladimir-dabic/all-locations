@@ -4,17 +4,34 @@
   --text-color: rgba(0, 17, 34, 0.8);
   --padding-vertical: 15px;
   --padding-horizontal: 25px;
+  --semi-bold: 600;
+  --bold: 700;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-xl: 22px;
+  --line-height-m: 24px;
+  --line-height-l: 28px;
+  --line-height-xl: 32px;
 }
 
 @font-face {
   font-family: 'Lato';
-  src: local('Lato'), url(./fonts/Lato/Lato-Regular.ttf) format('opentype');
+  src: local('Lato'), url(./fonts/Lato/Lato-Light.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Lato';
   font-weight: 600;
+  src: local('Lato'), url(./fonts/Lato/Lato-Regular.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-weight: 700;
   src: local('Lato'), url(./fonts/Lato/Lato-Bold.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Lato';
   font-weight: 900;

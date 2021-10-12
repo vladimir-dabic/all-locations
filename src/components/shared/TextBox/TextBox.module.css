@@ -5,8 +5,9 @@
 
 .text {
   margin-left: 8px;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: var(--font-size-s);
+  font-weight: var(--semi-bold);
+  line-height: var(--line-height-m);
   color: var(--text-color);
 }
 
