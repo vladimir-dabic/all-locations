@@ -3,3 +3,22 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.title {
+  display: inline-block;
+}
+
+.content {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}

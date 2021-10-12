@@ -1,8 +1,7 @@
 import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from 'react';
 import { Card } from '../../shared/Card';
-import { TextBox } from '../../shared/TextBox';
-import { formatDate } from '../../../utility/helpers';
 import { LocationData } from '../../../api';
+import { CardDetails } from '../shared/CardDetails';
 
 export enum CardIcons {
   users = 'users',
@@ -12,7 +11,7 @@ export enum CardIcons {
 
 type Props = {
   data: LocationData;
-  handleModal: (data: LocationData) => void;
+  handleModal: (data: LocationData & { views: number }) => void;
 };
 
 const LocationCard: FC<Props> = ({ data, handleModal }) => {
@@ -23,14 +22,14 @@ const LocationCard: FC<Props> = ({ data, handleModal }) => {
   const handleClick = (e: MouseEvent): void => {
     e.preventDefault();
     setViews(views + 1);
-    handleModal(data);
+    handleModal({ ...data, views: views + 1 });
   };
 
   const handleKeyDown = (e: KeyboardEvent): void => {
     if (e.code === 'Space' || e.code === 'Enter') {
       e.preventDefault();
       setViews(views + 1);
-      handleModal(data);
+      handleModal({ ...data, views: views + 1 });
     }
     if (e.code === 'Escape') {
       elementRef.current?.blur();
@@ -46,9 +45,11 @@ const LocationCard: FC<Props> = ({ data, handleModal }) => {
       ref={elementRef}
     >
       <Card title={name}>
-        <TextBox text={`${userCount} Views`} icon={CardIcons.users} />
-        <TextBox text={formatDate(createdAt)} icon={CardIcons.timezone} />
-        <TextBox text={views} icon={CardIcons.views} />
+        <CardDetails
+          userCount={userCount}
+          views={views}
+          createdAt={createdAt}
+        />
       </Card>
     </div>
   );
