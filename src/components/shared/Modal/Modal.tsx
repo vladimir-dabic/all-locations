@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { FC, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import FocusTrap from 'focus-trap-react';
 
 import { ReactComponent as CloseSvg } from '../../../assets/Close.svg';
 
@@ -25,6 +26,13 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
     }
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent): void => {
+    e.preventDefault();
+    if (e.code === 'Enter' || e.code === 'Space') {
+      onClose();
+    }
+  };
+
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     document.body.addEventListener('keydown', closeOnEscapeKeyDown);
@@ -35,28 +43,32 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
   }, []);
 
   return createPortal(
-    <div className={style.modal} onClick={onClose}>
-      <div
-        role="dialog"
-        className={style.content}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className={style.header}>
-          <h4 className={style.title}>{title}</h4>
-          <CloseSvg
-            fillOpacity={0.5}
-            onClick={onClose}
-            className={style.closeSvg}
-          />
-        </div>
-        <div className={style.body}>{children}</div>
-        <div className={style.footer}>
-          <button onClick={onClose} type="button" className={style.button}>
-            Close
-          </button>
+    <FocusTrap>
+      <div className={style.modal} onClick={onClose}>
+        <div
+          role="dialog"
+          className={style.content}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className={style.header}>
+            <h4 className={style.title}>{title}</h4>
+            <CloseSvg
+              tabIndex={0}
+              fillOpacity={0.5}
+              onClick={onClose}
+              onKeyPress={handleKeyPress}
+              className={style.closeSvg}
+            />
+          </div>
+          <div className={style.body}>{children}</div>
+          <div className={style.footer}>
+            <button onClick={onClose} type="button" className={style.button}>
+              Close
+            </button>
+          </div>
         </div>
       </div>
-    </div>,
+    </FocusTrap>,
     document.getElementById('root') as Element,
   );
 };
