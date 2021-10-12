@@ -12,35 +12,7 @@
   bottom: 0;
   left: 0;
   background-color: rgba(0, 17, 34, 0.6);
-  /* opacity: 0;
-  transition: all 0.3s ease-in-out; */
 }
-
-/* .modal.show {
-  opacity: 1;
-  pointer-events: visible;
-}
-
-.modal.show .content {
-  transform: translateY(0);
-} */
-
-/* .moda.enter-done {
-  opacity: 1;
-  pointer-events: visible;
-}
-
-.modal.exit {
-  opacity: 0;
-}
-
-.modal.enter-done .content {
-  transform: translateY(0);
-}
-
-.modal.exit .content {
-  transform: translateY(-200px);
-} */
 
 .header {
   display: flex;
@@ -61,8 +33,6 @@
   width: 440px;
   background-color: #fff;
   box-shadow: 0px 8px 16px -4px rgba(0, 17, 34, 0.2);
-  /* transform: translateY(-200px);
-  transition: all 0.3s ease-in-out; */
 }
 
 .footer {

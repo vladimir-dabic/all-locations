@@ -3,8 +3,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { FC, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import cx from 'classnames';
-import { CSSTransition } from 'react-transition-group';
 
 import { ReactComponent as CloseSvg } from '../../../assets/Close.svg';
 
@@ -37,8 +35,7 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
   }, []);
 
   return createPortal(
-    // <CSSTransition in={show} unmountOnExit timeout={{ enter: 0, exit: 300 }}>
-    <div className={cx(style.modal, { [style.show]: show })} onClick={onClose}>
+    <div className={style.modal} onClick={onClose}>
       <div
         role="dialog"
         className={style.content}
@@ -60,7 +57,6 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
         </div>
       </div>
     </div>,
-    // {/* </CSSTransition>, */}
     document.getElementById('root') as Element,
   );
 };
