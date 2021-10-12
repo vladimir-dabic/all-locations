@@ -1,8 +1,10 @@
 import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from 'react';
+
 import { Card } from '../../shared/Card';
 import { LocationData } from '../../../api';
 import { CardDetails } from '../shared/CardDetails';
 import EditSvg from '../../../assets/Edit.svg';
+
 import style from './LocationCard.module.css';
 
 export enum CardIcons {
@@ -55,7 +57,7 @@ const LocationCard: FC<Props> = ({ data, handleModal }) => {
           <img src={EditSvg} alt="edit" className={style.editSvg} />
         </div>
       )}
-      <Card title={name}>
+      <Card title={name} showHover={showEdit}>
         <CardDetails
           userCount={userCount}
           views={views}

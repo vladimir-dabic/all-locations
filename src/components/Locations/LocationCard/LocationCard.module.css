@@ -15,6 +15,10 @@
   right: 20px;
 }
 
+.edit:hover {
+  cursor: pointer;
+}
+
 .editSvg {
   opacity: 50%;
   width: 14px;
