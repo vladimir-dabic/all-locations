@@ -15,11 +15,14 @@ type Props = {
   title: string;
 };
 
+const modalRoot = document.createElement('div');
+modalRoot.setAttribute('id', 'modal-root');
+document.body.appendChild(modalRoot);
+
 const Modal: FC<Props> = ({ show, onClose, title, children }) => {
   if (!show) {
     return null;
   }
-
   const closeOnEscapeKeyDown = (e: KeyboardEvent): void => {
     if (e.code === 'Escape') {
       onClose();
@@ -53,6 +56,7 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
           <div className={style.header}>
             <h4 className={style.title}>{title}</h4>
             <CloseSvg
+              role="button"
               tabIndex={0}
               fillOpacity={0.5}
               onClick={onClose}
@@ -69,7 +73,7 @@ const Modal: FC<Props> = ({ show, onClose, title, children }) => {
         </div>
       </div>
     </FocusTrap>,
-    document.getElementById('root') as Element,
+    document.getElementById('modal-root') as Element,
   );
 };
 
