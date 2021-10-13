@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# All Locations
+
+Represents small react Application that shows fragment bigger APP.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
