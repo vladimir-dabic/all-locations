@@ -1,10 +1,16 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
-  padding: calc(25px - var(--card-margin)) calc(60px - var(--card-margin));
   justify-content: center;
   align-content: center;
-  min-height: 300px;
+}
+
+.gridContainer {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  grid-gap: 25px;
+  justify-content: center;
+  padding: 25px 60px;
 }
 
 .description {

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { PulseLoader } from 'react-spinners';
 
 const Spinner: FC = () => (
-  <div data-testid="LoaderId">
+  <div style={{ marginTop: '200px' }} data-testid="loaderId">
     <PulseLoader color="#00112270" />
   </div>
 );

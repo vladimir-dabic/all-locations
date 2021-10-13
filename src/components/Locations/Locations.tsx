@@ -57,14 +57,19 @@ const Locations: FC = () => {
         </Modal>
       )}
       <div className={style.container}>
-        {isLoading && <Spinner />}
-        {locations.map((locationsData) => (
-          <LocationCard
-            data={locationsData}
-            handleModal={handleModal}
-            key={locationsData.id}
-          />
-        ))}
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <div className={style.gridContainer}>
+            {locations.map((locationsData) => (
+              <LocationCard
+                data={locationsData}
+                handleModal={handleModal}
+                key={locationsData.id}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

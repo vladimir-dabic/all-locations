@@ -1,8 +1,6 @@
 .container {
-  margin: var(--card-margin);
   box-sizing: border-box;
   padding: var(--padding-vertical) var(--padding-horizontal);
-  width: 340px;
   height: 139px;
   border: 1px solid rgb(0, 17, 34, 0.1);
   border-radius: 2px;
