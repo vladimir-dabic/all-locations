@@ -1,7 +1,10 @@
 .container {
-  padding: calc(25px - var(--card-margin)) calc(60px - var(--card-margin));
   display: flex;
   flex-wrap: wrap;
+  padding: calc(25px - var(--card-margin)) calc(60px - var(--card-margin));
+  justify-content: center;
+  align-content: center;
+  min-height: 300px;
 }
 
 .description {

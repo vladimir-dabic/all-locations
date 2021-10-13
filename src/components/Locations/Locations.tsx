@@ -6,10 +6,12 @@ import style from './Locations.module.css';
 import { LocationCard } from './LocationCard';
 import { Modal } from '../shared/Modal';
 import { CardDetails } from './shared/CardDetails';
+import { Spinner } from '../shared/Spinner';
 
 const Locations: FC = () => {
   const [locations, setLocations] = useState<LocationData[]>([]);
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [currentCard, setCurrentCard] = useState<
     LocationData & { views: number }
   >();
@@ -21,6 +23,8 @@ const Locations: FC = () => {
     } catch (err) {
       // eslint-disable-next-line no-console
       console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -53,6 +57,7 @@ const Locations: FC = () => {
         </Modal>
       )}
       <div className={style.container}>
+        {isLoading && <Spinner />}
         {locations.map((locationsData) => (
           <LocationCard
             data={locationsData}
