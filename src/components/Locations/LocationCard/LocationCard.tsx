@@ -3,7 +3,7 @@ import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from 'react';
 import { Card } from '../../shared/Card';
 import { LocationData } from '../../../api';
 import { CardDetails } from '../shared/CardDetails';
-import EditSvg from '../../../assets/Edit.svg';
+import EditSvg from '../../../assets/icons/Edit.svg';
 
 import style from './LocationCard.module.css';
 

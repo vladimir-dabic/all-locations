@@ -5,7 +5,7 @@ import React, { FC, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import FocusTrap from 'focus-trap-react';
 
-import { ReactComponent as CloseSvg } from '../../../assets/Close.svg';
+import { ReactComponent as CloseSvg } from '../../../assets/icons/Close.svg';
 
 import style from './Modal.module.css';
 

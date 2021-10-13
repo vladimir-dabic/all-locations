@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import UsersSvg from '../../../assets/Users.svg';
-import ViewSvg from '../../../assets/Views.svg';
-import TimezoneSvg from '../../../assets/Timezone.svg';
+import UsersSvg from '../../../assets/icons/Users.svg';
+import ViewSvg from '../../../assets/icons/Views.svg';
+import TimezoneSvg from '../../../assets/icons/Timezone.svg';
 import style from './TextBox.module.css';
 
 export enum CardIcons {
