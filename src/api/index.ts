@@ -1,4 +1,4 @@
-const URL = 'https://6033c4d8843b15001793194e.mockapi.io/api/locations';
+export const GET_MOCK_DATA = 'https://6033c4d8843b15001793194e.mockapi.io/api/locations';
 
 export type LocationData = {
   id: string;
@@ -9,7 +9,7 @@ export type LocationData = {
 };
 
 const getLocations = async (): Promise<LocationData[]> => {
-  const response = await fetch(URL, {
+  const response = await fetch(GET_MOCK_DATA, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
