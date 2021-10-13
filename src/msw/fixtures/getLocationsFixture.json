@@ -4,20 +4,20 @@
     "createdAt": "2021-03-05T09:10:35.462Z",
     "name": "name1",
     "userCount": 11,
-    "description": "Investment Account"
+    "description": "Description1"
   },
   {
     "id": "2",
     "createdAt": "2020-03-05T09:10:35.462Z",
     "name": "name2",
     "userCount": 12,
-    "description": "Investment Account"
+    "description": "Description2"
   },
   {
     "id": "3",
     "createdAt": "2020-03-05T09:10:35.462Z",
     "name": "name3",
     "userCount": 13,
-    "description": "Investment Account"
+    "description": "Description3"
   }
 ]
