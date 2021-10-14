@@ -34,6 +34,7 @@
       }
     ],
     "no-shadow": "off",
+    "linebreak-style": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/explicit-function-return-type": [
       "warn",
