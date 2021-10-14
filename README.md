@@ -1,6 +1,6 @@
 # All Locations
 
-Represents small react Application that shows fragment bigger APP.
+Represents small react Application that shows one fragment of the bigger APP.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
